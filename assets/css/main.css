@@ -1,0 +1,754 @@
+*{margin: 0; padding: 0;font-family: 'Josefin Sans', sans-serif;}
+
+        .body{
+            width:100%;
+            height:100vh;
+            
+            /* background: rgb(0,166,10);
+            background: radial-gradient(circle, rgb(0 175 11) 0%, rgb(0 42 1) 67%, rgb(0 0 0) 100%); */
+            /* background-image: linear-gradient(to bottom, #003604, #00580a, #087c0d, #1aa20b, #2fca00); */
+        }
+
+        .background {
+            position: absolute;
+            overflow: hidden;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .backimage{
+            width: 100%;
+            filter: brightness(0.4) blur(3px);
+            position: absolute;
+        }
+        /* .rain{
+            height: 100vh;
+            background-image: url(images/rain.png);
+            animation : rain .3s linear infinite;
+        }
+
+        .rain :before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #ffffff;
+            animation: lighting .3s linear infinite;
+            opacity: 0;
+        } */
+
+
+        @keyframes rain{
+            0%{
+                background-position: 0% 0% ;
+            }
+            100%{
+                background-position: 100% 100% ;
+            }
+        }
+
+        @keyframes lighting{
+            0%{
+                opacity: 0;
+            }
+            10%{
+                opacity: 0;
+            }
+            11%{
+                opacity: 1;
+            }
+            14%{
+                opacity: 0;
+            }
+            20%{
+                opacity: 0;
+            }
+            21%{
+                opacity: 1;
+            }
+            24%{
+                opacity: 0;
+            }
+            104%{
+                opacity: 0;
+            }
+        }
+
+        .car{
+            width: 18px;
+            height: 88px;
+            position: absolute;
+            left:208px;
+            top: 600px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: transparent;
+            transform: rotate(0deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .car img{
+            width: 55px;
+            -webkit-filter: drop-shadow(-8px 13px 0px rgb(20, 20, 20));
+            filter: drop-shadow(-8px 13px 0px rgb(20, 20, 20));
+            
+        }
+        .frontlight {
+            position: absolute;
+            height: 0px;
+            top: 0;
+            box-shadow: 0px -21px 65px 20px #ffffff;
+            z-index: -1;
+        }
+        .backlight {
+            position: absolute;
+            height: 0px;
+            bottom: 0;
+            box-shadow: 0px 12px 20px 8px #ff00008f;
+            z-index: -1;
+            width: 30px;
+
+        }
+
+        .neonlight{
+            box-shadow: -2px 0px 18px 30px #00a6ff73;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .bullet{
+            position: absolute;
+            top: 0;
+        }
+
+        .bullet img{
+            width: 15px;
+        }
+        
+    /* 
+        .light img{
+            width: 65px;
+        } */
+
+        /*
+         .light::before{
+            content :'';
+            position: absolute;
+            bottom:5px;
+            left:0px;
+            width:22px;
+            height:7px;
+            background: linear-gradient(90deg,#ffffffba,transparent);
+            transform-origin: left;
+            transform: perspective(7px) rotateY(-15deg) rotate(9deg);
+        } 
+
+        .light::after{
+            content :'';
+            position: absolute;
+            top:5px;
+            left:0px;
+            width:22px;
+            height:7px;
+            background: linear-gradient(90deg,#ffffffba,transparent);
+            transform-origin: left;
+            transform: perspective(7px) rotateY(-15deg) rotate(-6.4deg);
+        } */
+        /* .light{
+            position: absolute;
+    top: -19px;
+    right: 20px;
+    height: 50px;
+    transform: rotate(-90deg);
+
+        }
+        .light::before{
+            content :'';
+            position: absolute;
+            bottom:5px;
+            left:0px;
+            width:22px;
+            height:7px;
+            background: linear-gradient(90deg,#ffffffba,transparent);
+            transform-origin: left;
+            transform: perspective(7px) rotateY(-15deg) rotate(9deg);
+        }
+        .light::after{
+            content :'';
+            position: absolute;
+            top:5px;
+            left:0px;
+            width:22px;
+            height:7px;
+            background: linear-gradient(90deg,#ffffffba,transparent);
+            transform-origin: left;
+            transform: perspective(7px) rotateY(-15deg) rotate(-9deg);
+        } */
+        .ecar{
+            /* width: 55px; */
+            /* height: 123px; */
+            position: absolute;
+            /* background-image: url(images/car1.png); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* animation: animoveecar 8s linear infinite; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ecar img{
+            width: 55px;
+            -webkit-filter: drop-shadow(-8px 13px 0px rgb(20, 20, 20));
+            filter: drop-shadow(-8px 13px 0px rgb(20, 20, 20));
+        }
+
+        .coin{
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: animovecoin 1s linear infinite;
+            z-index: 1;
+        }
+        
+        .coin img{
+            width: 35px;
+            -webkit-filter: drop-shadow(9px -6px 3px rgb(20, 20, 20)) drop-shadow(3px -4px 15px #f7ca12);
+            filter: drop-shadow(9px -6px 3px rgb(20, 20, 20)) drop-shadow(3px -4px 15px #f7ca12);
+            transform: rotate(140deg);
+        }
+
+        /* drop-shadow(9px -6px 4px rgb(20, 20, 20)) drop-shadow(4px -2px 15px yellow) */
+
+        /* @keyframes animoveecar{
+            0%{
+                transform: translateX(10px) translateY(-10px);
+            }
+            25%{
+                transform: translateX(-10px) translateY(0px);
+            }
+            50%{
+                transform: translateX(10px) translateY(10px);
+            }
+            70%{
+                transform: translateX(-10px) translateY(0px);
+            }
+            100%{
+                transform: translateX(10px) translateY(-10px);
+            }
+        } */
+
+
+
+        @keyframes animovecoin{
+            0%{
+                transform: scale(1.1);
+            }
+            50%{
+                transform: scale(1);
+            }
+            100%{
+                transform: scale(1.1);
+            }
+        }
+
+        .lines{
+            width :6px;
+            height: 100px;
+            background: #ffffff;
+            position: absolute;
+            left:225px;
+        }
+
+        .borderline{
+            width :4px;
+            height: 40px;
+            background: #ffffff;
+            position: absolute;
+
+        }
+
+        .right{
+            right:0;
+        }
+        .left{
+            left:0;
+        }
+
+        .tree{
+            position:absolute;
+        }
+
+        .streetlight{
+            position: absolute;
+            filter: drop-shadow(17px 100px 1px black);
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            z-index: 4;
+        }
+
+        .streetlight .hood{
+            width: 40px;
+            height: 14px;
+            background: #c2c2c2;
+            border-radius: 17px;
+            box-shadow: 0px 2px 75px 15px #ffffff;
+            border: 1px solid #000;
+        }
+
+        .streetlight .stick{
+            width: 37px;
+            height: 5px;
+            background: #d6d6d6;
+            border-radius: 2px;
+        }
+
+
+        .tree img{
+            width: 140px;
+            filter: brightness(0.8);
+        }
+
+        .gameArea{
+            width: 460px;
+            height: 100vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: #1e2223;
+            /* background-image: url(images/road.png); */
+            /* background-repeat: no-repeat;
+            background-size: cover; */
+            position: absolute;
+            overflow: hidden;
+            /* border-right: 7px dashed #c8d6e5;
+            border-left: 7px dashed #c8d6e5; */
+        }
+
+        .gameelement{
+            width: 620px;
+            height: 100vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            overflow-y: hidden;
+        }
+
+        .backtree .inner{
+            z-index: 5;
+        }
+
+        .menu{
+            margin: 0 auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            /* background-color: rgb(0, 0, 0); */
+            background-image: url(/images/menubg1.jpg);
+            background-repeat: no-repeat;
+            background-size: cover; 
+            border-radius: 12px;
+            box-shadow: -20px 16px 6px 0px rgb(0 0 0 / 35%), 0px 0px 6px 3px rgb(255 0 52 / 63%);
+            z-index: 1;
+            color: #ffffff;
+            padding: 35px 25px; 
+        }
+
+        .detail input{
+            padding: 12px;
+            width: 300px;
+            margin: 15px auto;
+            background-color: transparent;
+            border: 2px solid #ffd600 ;
+            color: #ffffff;
+            border-radius: 30px;
+        }
+
+        .detail input:focus{
+            outline: none;
+        }
+
+        .btn{
+            width: 185px;
+            background-color: #ffd600;
+            border-radius: 30px;
+            border: none;
+            padding: 11px 0px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.5s ease;
+            cursor: pointer;
+            margin:20px auto 0 auto;
+        }
+
+            /* .btn:hover{
+                    background: #03e9f4;
+                    color: #050801;
+                    box-shadow: 0 0 5px #03e9f4,
+                    0 0 25px #03e9f4,
+                    0 0 50px #03e9f4,
+                    0 0 200px #03e9f4,
+            } */
+        .container1{
+            margin: 25px 0 0px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+        .container1 h2{
+            font-family: 'Righteous', cursive;
+            font-weight: 100;
+            letter-spacing: 2px;
+            font-size: 2.8em;
+        }
+
+        .innercontainer{
+            font-size: 18px ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 25px 0;
+        }
+
+        .innercontainer div {
+            padding: 9px 20px;
+            border-radius: 40px;
+            width: 130px;
+            margin: 0 10px;
+            box-shadow: -4px 7px 6px 3px rgb(0 0 0 / 53%);
+        }
+
+        .innercontainer #score{
+            background-color: #00ffd73d;
+            border: 3px solid #05ffd8;
+        }
+
+        .innercontainer #coin{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffbd3945;
+            border: 2px solid #ffda39;
+        }
+
+        .innercontainer #coin img{
+            width: 18px; 
+            padding: 0;
+            margin-right: 10px;
+            animation: animovecoin 1s linear infinite;
+        }
+
+        .container2{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+            margin:  65px 0 0 0;
+        }
+
+        #start{
+            font-size: 25px;
+            color: #ffffff;
+            height: 70px;
+            width: 70px;
+            margin: 45px auto;
+            text-align: center;
+            border-radius: 40px;
+            background-color: #6900ff91;
+            animation: animovecoin 1s linear infinite;
+            box-shadow: -6px 9px 10px 3px rgb(0 0 0 / 53%);
+        }
+
+        #start i {
+            margin: 24px;
+        }
+
+        .container2 .innercontainer{
+            flex-direction: column;
+        }
+
+        .container2 .innercontainer div{
+            padding: 9px 0;
+            width: 150px;
+            font-size: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #181818d1;
+            margin-bottom: 20px;
+            /* background-color: #00000080;
+            border: 2px solid #ffffffa6; */
+        }
+
+        .container2 .innercontainer div i{
+            margin-right: 10px;
+        }
+
+        .container3 h2{
+            font-size: 2em;
+        }
+
+
+        .options{
+            display: none;
+        }
+
+        .container3{
+            padding:  0 30px;
+
+        }
+        .container3 .first {
+            justify-content: space-between;
+            font-size: 18px;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        .container3 #coin{
+            padding: 5px 20px ;
+            background-color: #ffbd3945;
+            border-radius: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid #ffda39;
+        }
+        .container3 #coin img{
+            width: 25px;
+            margin-right: 10px;
+            
+        }
+
+        .container3 .second{
+            flex-direction: column;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .container3 .slider{
+            display: flex;
+            align-content: center;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .repeat {
+            font-size: 16px;
+            display: none;
+        }
+        .repeat .newscore{
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin: 20px 0;
+            background-color: #00ffd73d;
+            border: 3px solid #05ffd8;
+        }
+
+        .repeat .coinboard{
+            padding: 2px 15px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #ffbd3945;
+            border: 2px solid #ffda39;
+        }
+
+        .coinboard img{
+            width: 28px;
+            margin-right: 10px;
+            animation: animovecoin 1s linear infinite;
+        }
+
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .buttons .tryagain{
+            background-color: #ff007891;
+            color: #ffffff;
+        }
+        .buttons .backmenu{
+            background-color: #eeeeeeab;
+            color: #000;
+        }
+
+        .buttons .vehiclemenu{
+            background-color: #ff00fc4a;
+            color: #ffffff;
+        }
+
+        .options .ico{
+            width: 50px;
+        }
+
+        .sliderimage{
+            width: 140px;
+        }
+
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+
+        .container3 .data{
+            width: 85%;
+            margin: 0 auto;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .data .speeddata{
+            color: #ffd600;
+            font-size: 18px;
+        }
+
+        .progress {
+            width: 100%;
+            background-color: #1d1d1d;
+            margin: 15px 0;
+        }
+
+        .bar{
+            width: 1%;
+            height: 16px;
+            background-color: #ffd600;
+        }
+
+
+
+        .score{
+            background: #ffd600;
+            width: 17%;
+            border-radius: 15px;
+            box-shadow: -5px 9px 20px 0px rgb(0 0 0 / 41%);
+            position: absolute;
+            top: 70px;
+            left: 120px;
+            text-align: center;
+            padding: 30px 0px;
+            font-size: 22px;
+            display: none;
+            color: #000;
+            
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* background: rgb(0, 0, 0); */
+            color: #ffffff;
+            width: 90%;
+            /* border-radius: px; */
+            /* box-shadow: -5px 9px 20px 0px rgb(0 0 0 / 41%); */
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            text-align: center;
+            /* padding: 20px; */
+            font-size: 16px;
+            z-index: 1;
+        }
+        .navbar .cointab{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2px 15px;
+            border-radius: 30px;
+            background-color: #ffbd3945;
+            border: 2px solid #ffda39;
+            box-shadow: 1px 9px 10px 1px rgb(0 0 0); 
+        }
+
+        .navbar .scoretab{
+            padding: 8px 20px;
+            border-radius: 30px;
+            background-color: #00ffd73d;
+            border: 3px solid #05ffd8;
+            box-shadow: 1px 9px 10px 1px rgb(0 0 0);
+        }
+
+        .cointab img{
+            width: 30px;
+            margin-right: 10px;
+            animation: animovecoin 1s linear infinite;
+        }
+        
+        
+        .speedmeter{
+            background: #ffd600;
+            width: 17%;
+            border-radius: 15px;
+            box-shadow: -5px 9px 20px 0px rgb(0 0 0 / 41%);
+            position: absolute;
+            top: 270px;
+            left: 120px;
+            text-align: center;
+            padding: 30px 0px;
+            font-size: 22px;
+            color: #000;
+        }
+
+        .tag{
+            color: white;
+            margin: 17px;
+            position: absolute;
+            background: #00000057;
+            
+        }
+
+        .tag p{
+            margin: 12px;
+        }
+
+        .allow{
+            background-color: #ffd600;
+            border-radius: 30px;
+            border: none;
+            color: #000;
+            padding: 7px 29px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 17px;
+            transition: 0.5s ease;
+            cursor: pointer;
+            margin: 28PX 30px;
+        }
+        
+        .ask{
+            position: absolute;
+            top: 180px;
+            left: 150px;
+            background-color: rgb(0, 0, 0);
+            border-radius: 12px;
+            box-shadow: -5px 9px 20px 0px rgb(0 0 0 / 41%);
+            z-index: 1;
+            display: none;
+        }
